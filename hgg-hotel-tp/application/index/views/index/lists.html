@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-lists
+index --- index ---lists
+{$person['name']}
+<ul>
+    {volist name="skill" id="item"}
+    <li> {$item} </li>
+    {/volist}
+</ul>
+<ul>
+    {volist name="student" id="item"}
+    <li> {$item.names}  {$item.sex} </li>
+    {/volist}
+</ul>
 </body>
 </html>

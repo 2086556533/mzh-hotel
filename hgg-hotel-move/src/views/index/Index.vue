@@ -31,20 +31,27 @@
         <!--        选择框-->
         <div class="index-select">
             <div class="position">
-                北京市
+                <router-link to="/province">{{indexSearch.province}}</router-link>&nbsp;&nbsp;
                 <img src="../../assets/imgs/arrow.png" alt="" style="width: 0.78125rem">
             </div>
             <mu-container class="input">
-                <mu-text-field placeholder="景点 地址 关键词" style="line-height: 0.75rem;width: 8rem"></mu-text-field>
+                <mu-text-field underline-color="#eb666b" placeholder="景点 地址 关键词" style="line-height: 0.75rem;width: 9.013rem"></mu-text-field>
             </mu-container>
             <div class="index-position">定位
                 <div class="position-img">
                     <img style="height:0.78rem" src="../../assets/imgs/position-img.png" alt="">
                 </div>
             </div>
-            <div class="date">
-                日期选择
-            </div>
+            <router-link to="/calendar" class="date" tag="div">
+                <div class="date-box">
+                    <span class="date">{{indexSearch.startTime}}</span>
+                    <span class="day">{{indexSearch.startDay}}</span>
+
+                    <span class="date">{{indexSearch.endTime}}</span>
+                    <span class="day">{{indexSearch.endDay}}</span>
+                </div>
+
+            </router-link>
             <div class="search-now">
                 立即查找
             </div>
@@ -79,6 +86,11 @@
 
     export default {
         name: "Index",
+        computed:{
+            indexSearch(){
+                return this.$store.state.indexSearch;
+            }
+        },
         data() {
             return {
                 carouselImg1,
@@ -136,11 +148,12 @@
 
     /*    定位*/
     .position {
-        width: 4.1rem;
+        width: 5rem;
         height: 1.75rem;
         z-index: 999;
-        border-bottom: 1px solid black;
+        border-bottom: 1px solid #eb666b;
         float: left;
+        text-align: center;
         position: relative;
         top: 0.5315rem;
     }
@@ -149,7 +162,7 @@
         float: left;
         position: absolute;
         top: 1.2rem;
-        right: 0.8rem;
+        right: 1.5rem;
         color: #8d8d8d;
     }
 
@@ -157,15 +170,16 @@
         float: left;
 
     }
-
-    .date {
-        width: 16rem;
-        height: 2rem;
-        border: 1px solid red;
-        margin:0 auto;
-
-    }
-
+.date-box{
+    width: 80%;
+    height: 2rem;
+    margin: 0 auto;
+}
+.date{
+    font-size: 1.156rem;
+    line-height: 1.156rem;
+    color: #343434;
+}
     .search-now {
         width: 16.9375rem;
         height: 2.1875rem;

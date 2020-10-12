@@ -88,7 +88,7 @@
         left: 60px;
         width: 2px;
         height: 80px;
-        background-color: lightcoral;
+        background-color: green;
         animation: loading 1.2s infinite linear;
     }
 

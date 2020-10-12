@@ -1,19 +1,15 @@
 <template>
     <div>
         <!--       vue 循环v-for     :表示v-bind  绑定数据 :数据名=’数据值‘ -->
-
         <div v-for="item in provinceKeys" :key="item" class="small">
             <h2>{{item}}</h2>
-            <van-divider content-position="left" :style="{color:'red',height:'3px'}">文字</van-divider>
             <ul>
-                <li v-for="(city,index) in province[item]" :key="index">
-                    <a href="#" style="display: block;line-height: 2rem;color: black">{{city.province}}</a>
-
+                <li v-for="(city,index) in province[item]" :key="index" @click="handleProvince(city.city)">
+                    <a href="#" style="display: block;line-height: 2rem;color: black">{{city.city}}</a>
                 </li>
             </ul>
         </div>
     </div>
-
 </template>
 
 
@@ -57,6 +53,11 @@
                     this.province[firstChar].push(ele);
                 })
             },
+            //点击省份调用store中的设置省份方法
+            handleProvince(province){
+                this.$store.commit('setProvince',province)
+                this.$router.back()
+            }
         },
         mounted() {
 

@@ -17,7 +17,7 @@
 </template>
 
 <script>
-    import {SUCCESS,URL} from "../../../lib/base";
+
 
     export default {
         name: "Changepass",
@@ -35,7 +35,7 @@
         },
         methods:{
             handlerSubmit(){
-                SUCCESS,URL
+
                 let url=URL+'/admin/login/updatepass';
                 let token=sessionStorage.getItem('token')
                 this.$http({
@@ -46,7 +46,7 @@
                         token
                     }
                 }).then(res=>{
-                    if(res.status===200&&res.data.code===SUCCESS){
+                    if(res.status===200&&res.data.code===200){
                         this.$message.success(res.data.msg);
                         sessionStorage.clear();
                         this.$router.push('./login');

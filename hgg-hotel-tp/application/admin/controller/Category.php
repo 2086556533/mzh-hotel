@@ -53,7 +53,9 @@ class Category extends Controller
     }
 
     /**
-     *查看数据，分页，搜索
+     *查看数据，分页（limit。page），搜索
+     * 前台：查看符合指定条件的某一页的若干条数据
+     * 后台：当前台的数据返回时，返回给前台数据总数
      */
     public function index()
     {

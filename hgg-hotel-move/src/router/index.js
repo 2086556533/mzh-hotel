@@ -30,6 +30,26 @@ const routes = [
         name: 'Home',
         component: () => import('../views/Home')
     },
+    {
+        //引入home组件
+        path: '/calendar',
+        name: 'Calendar',
+        component: () => import('../views/calendar/Calendar')
+    },
+    {
+        //引入list组件
+        path: '/list',
+        name: 'List',
+        component: () => import('../views/list/List'),
+        meta:{title:'民宿列表'}
+    },
+    {
+        //引入list组件
+        path: '/my',
+        name: 'My',
+        component: () => import('../views/my/My'),
+        meta:{title:'个人中心'}
+    },
 
 ];
 

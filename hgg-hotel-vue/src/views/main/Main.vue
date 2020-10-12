@@ -28,7 +28,7 @@
                     <el-submenu index="1-2">
                         <template slot="title"><i class="el-icon-setting"></i>民宿管理</template>
                         <el-menu-item><router-link to="/stayhomeadd">  <i class="el-icon-plus"></i>民宿添加</router-link></el-menu-item>
-                        <el-menu-item><router-link :to="{path:'/index'}"><i class="el-icon-view"></i>民宿查看</router-link></el-menu-item>
+                        <el-menu-item><router-link :to="{path:'/stayhomeindex'}"><i class="el-icon-view"></i>民宿查看</router-link></el-menu-item>
                     </el-submenu>
                 </el-menu>
             </el-aside>

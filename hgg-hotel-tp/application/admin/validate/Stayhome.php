@@ -4,7 +4,9 @@
 namespace app\admin\validate;
 
 
-class Stayhome
+use think\Validate;
+
+class Stayhome extends Validate
 {
 
 }

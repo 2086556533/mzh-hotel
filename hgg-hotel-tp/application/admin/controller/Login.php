@@ -42,7 +42,7 @@ class Login extends Controller
         //判断数据库中的username是否和传入的username一致
         $whereArr = ['username' => $data['username']];
         //根据传入的用户名找到数据库中对应的用户数据
-        $user = Db::table('user')->where($whereArr)->find();
+        $user = Db::table('admin')->where($whereArr)->find();
         if ($user) {
             //将传入的密码进行加密并与数据库中的密码进行比较
             $password = md5(crypt($data['password'], config('salt')));
@@ -55,6 +55,8 @@ class Login extends Controller
                 ];
                 // 为本次登录设置token
                 $token = JWT::getToken($payload, config('jwtkey'));
+
+
                 // 返回登陆成功
                 return json([
                     'code' => 200,
@@ -62,10 +64,10 @@ class Login extends Controller
                     'token' => $token,
                     'user' => $payload,
                 ]);
-            }else{
+            } else {
                 return json([
-                   'code'=>404,
-                   'msg'=>'登陆失败',
+                    'code' => 404,
+                    'msg' => '登陆失败',
 
                 ]);
             }
@@ -79,5 +81,57 @@ class Login extends Controller
     }
 
     //修改密码
+    public function updatepass()
+    {
+        checkToken();
+        if (!$this->request->isPost()) {
+            return json([
+                'code' => 404,
+                'msg' => '请求方式错误'
+            ]);
+        }
 
+        $data = $this->request->post();
+        $validate = validate('Login');
+        if (!$validate->scene('chagepass')->check($data)) {
+            return json([
+                'code' => 404,
+                'msg' => $validate->getError()
+            ]);
+        }
+        $id = $this->request->id;
+        $oldpass = secretPassword($data['oldpass']);
+        $newpass = secretPassword($data['newpass']);
+
+        if ($oldpass == $newpass) {
+            return json([
+                'code' => 404,
+                'msg' => '新密码和原密码不能相同'
+            ]);
+        }
+
+        $result = Db::table('admin')->field('password')->where('id', $id)->find();
+        $password = $result['password'];
+
+        if ($password != $oldpass) {
+            return json([
+                'code' => 404,
+                'msg' => '原密码错误'
+            ]);
+        }
+
+        $result = Db::table('admin')->where('id', $id)->update(['password' => $newpass]);
+
+        if ($result) {
+            return json([
+                'code' => 200,
+                'msg' => '数据更新成功'
+            ]);
+        } else {
+            return json([
+                'code' => 404,
+                'msg' => '数据更新失败'
+            ]);
+        }
+    }
 }
