@@ -17,7 +17,7 @@
 <script>
     import axios from 'axios';
 
-    import {URL,FAIL,SUCCESS} from "../../../lib/base";
+    import {URL,SUCCESS} from "../../../lib/base";
     export default {
         name: "CategoryAdd",
         data(){
@@ -58,7 +58,7 @@
                     if(valid){
                         let url=URL+'/admin/category/add';
                         let token=sessionStorage.getItem('token');
-                        SUCCESS,FAIL;
+
                         axios({
                             url,
                             method:'POST',

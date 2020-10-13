@@ -9,15 +9,18 @@ use think\Controller;
 use think\Db;
 Use think\Request;
 
+
 class Stayhome extends Controller
 {
     public $validate;
     public $code;
 
     //创建一个simpleXMLEmlement对象
+    //构造函数   将函数中常用的变量进行初始化
     public function __construct(Request $request = null)
     {
         parent::__construct($request);
+        //将状态码和验证器当作当前函数的一个属性
         $this->code = config('code');
         $this->validate = validate('Stayhome');
     }
@@ -98,7 +101,6 @@ class Stayhome extends Controller
     {
         //
         $data = $this->request->post();
-
         //判断字段是否重复
         $sname = $data['sname'];
         $isExist = Db::table('stayhome')->where('sname', $sname)->count();

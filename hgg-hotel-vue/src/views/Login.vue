@@ -3,11 +3,11 @@
         <div class="login-content">
             <el-form ref="loginform" :model="loginForm" :rules="rules" class="demo-ruleForm">
                 <el-form-item label="用户名" prop="username" autocomplete="on">
-                    <el-input v-model="loginForm.username" auto-complete="off" > </el-input>
+                    <el-input v-model="loginForm.username" auto-complete="off"></el-input>
                 </el-form-item>
 
                 <el-form-item label="密  码" prop="password">
-                    <el-input v-model="loginForm.password" type="password"> </el-input>
+                    <el-input v-model="loginForm.password" type="password"></el-input>
                 </el-form-item>
 
                 <el-form-item>
@@ -22,7 +22,8 @@
 
 <script>
     import axios from 'axios';
-    import {SUCCESS,URL} from "../lib/base";
+    import {SUCCESS, URL} from "../lib/base";
+
     export default {
         name: "login",
         data() {
@@ -42,20 +43,20 @@
         },
         methods: {
             handleLogin() {
-                this.$refs.loginform.validate(validate=> {
+                this.$refs.loginform.validate(validate => {
                     if (validate) {
-                        const loginagain=axios.post(URL+'/admin/Login/check',this.loginForm);
-                        loginagain.then((res)=>{
-                            if(res.status === 200&& res.data.code ===SUCCESS){
-                                sessionStorage.setItem('token',res.data.token);//登录成功把token存到本地
-                                sessionStorage.setItem('user',JSON.stringify(res.data.user));
-                                let redirect=this.$route.query.redirect||'index';
-                                this.$router.push({name:redirect})
+                        const loginagain = axios.post(URL + '/admin/Login/check', this.loginForm);
+                        loginagain.then((res) => {
+                            if (res.status === 200 && res.data.code === SUCCESS) {
+                                sessionStorage.setItem('token', res.data.token);//登录成功把token存到本地
+                                sessionStorage.setItem('user', JSON.stringify(res.data.user));
+                                let redirect = this.$route.query.redirect || 'index';
+                                this.$router.push({name: redirect})
                                 alert('登陆成功');
-                            }else{
+                            } else {
                                 this.$message.error(res.data.msg)//发送错误信息
                             }
-                        }).catch(function (error){
+                        }).catch(function (error) {
                             console.log(error)
                         })
 
@@ -79,7 +80,7 @@
 </script>
 
 <style scoped>
-    .login{
+    .login {
         position: absolute;
         left: 0;
         top: 0;
@@ -89,13 +90,14 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    .login>.login-content{
+
+    .login > .login-content {
         width: 400px;
         height: auto;
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
         background-image: url("../assets/login-background.jpg");
 
         padding: 20px;

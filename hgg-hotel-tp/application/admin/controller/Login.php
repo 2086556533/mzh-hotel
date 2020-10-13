@@ -55,7 +55,7 @@ class Login extends Controller
                 ];
                 // 为本次登录设置token
                 $token = JWT::getToken($payload, config('jwtkey'));
-
+                echo $token;
 
                 // 返回登陆成功
                 return json([

@@ -1,7 +1,7 @@
 <template>
     <div>
         <loading :isshow="showLoading"></loading>
-        <el-form :model="stayhomeform" ref="stayhomeform">
+        <el-form :model="stayhomeform" ref="categoryform">
             <el-form-item label="所属分类">
                 <el-select v-model="stayhomeform.cid" placeholder="请选择">
                     <el-option
@@ -105,7 +105,7 @@
                             'bold',
                             'italic',
                             'underline'
-                            ]" value="默认的富文本编辑器"
+                            ]" value=""
                            formfield="sdetail" @rich-change="setSnotice"
                 ></rich-text>
             </el-form-item>
@@ -117,7 +117,7 @@
 </template>
 
 <script>
-    import {SUCCESS, URL, IMGURL, FAIL} from "../../../lib/base";
+    import {SUCCESS, URL, IMGURL} from "../../../lib/base";
     import loading from "../../../components/loading/Loading";
     import instance from "../../../http/http";
     import E from 'wangeditor';
@@ -281,7 +281,7 @@
                     if (valid) {
                         let url = URL + '/admin/stayhome/save';
                         let token = sessionStorage.getItem('token');
-                        SUCCESS, FAIL;
+
                         axios({
                             url,
                             method: 'POST',
