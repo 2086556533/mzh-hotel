@@ -99,11 +99,15 @@ class Stayhome extends Controller
      */
     public function save(Request $request)
     {
-        //
+        //接收前台数据
         $data = $this->request->post();
-        //判断字段是否重复
-        $sname = $data['sname'];
+        //获取sname
+        $sname=$data['sname'];
+
+        echo $sname;
+        //查数据库获取sname相同的字段
         $isExist = Db::table('stayhome')->where('sname', $sname)->count();
+        //判断是否重复
         if ($isExist) {
             return json([
                 'code' => $this->code['fail'],

@@ -100,14 +100,6 @@
             </el-form-item>
             <el-form-item>
                 <rich-text formfield="snotice" @rich-change="setSnotice"></rich-text>
-                <rich-text :menus="[
-                            'head',
-                            'bold',
-                            'italic',
-                            'underline'
-                            ]" value=""
-                           formfield="sdetail" @rich-change="setSnotice"
-                ></rich-text>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="handlerSubmit">提交</el-button>
@@ -294,7 +286,8 @@
                                 this.$message.success(res.data.msg)
                             }
                         }).catch(() => {
-                            this.$message.error("分类添加失败")
+
+                            this.$message.error("民宿添加失败")
                         })
                     }
 

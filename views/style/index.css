@@ -1,0 +1,364 @@
+*,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body,html{
+    margin: 0;
+    padding: 0;
+}
+
+span{
+    font-size: 16px;
+}
+/* 头部开始 */
+
+.search img{
+    width: 0.4rem;
+    height: 0.4rem;
+    z-index: 999;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0.55rem;
+    top: 1.2rem;
+}
+
+.swiper-pagination{
+    position: absolute;
+    top: 2.86rem;
+}
+
+.area{
+    background: #fff;
+    border-radius: 0.2rem 0.2rem 0.2rem 0.2rem;
+    z-index: 999;
+    width: 6.3rem;
+    height: 8.38rem;
+    margin-top: -5.6rem;
+    margin-left: 0.74rem;
+    position: relative;
+    top: 3.6rem;
+    box-shadow: 3px 3px 25px #fff;
+}
+
+.search-area{
+    position: absolute;
+    left: 20px;
+}
+
+.search-area-middle{
+    position: absolute;
+    top: 0px;
+    left: 1.8rem;
+}
+
+.search-area-middle input{
+    border: none;
+    font-size: 15px;
+    width: 130px;
+    line-height: 30px;
+    opacity: 0.5;
+}
+
+.search-area-right{
+    position: absolute;
+    right:-221px;
+    top: 25px;
+    width: 67px;
+    height: 25px;
+
+}
+
+.time-area-day span{
+    position: absolute;
+    top: 84px;
+    right: 20px;
+    color: #adadad
+}
+
+.time{
+    width: 225px;
+    height: 33px;
+    position: absolute;
+    left: 20px;
+    top: 76px;
+}
+
+.time-day span{
+    color: #343434;
+    position: absolute;
+    font-size: 25px;
+}
+
+.week-day span{
+    color:  #ed7a7e;
+    position: absolute;
+    left: 70px;
+    top: 10px;
+}
+
+.toright img{
+    transform: rotateY(180deg) rotate(-90deg);
+    width: 30px;
+    height: 15px;
+    position: absolute;
+    top: 16px;
+    left: 105px;
+}
+
+.time-tomorrow span{
+    color: #343434;
+    position: absolute;
+    font-size: 25px;
+    position: absolute;
+    left: 135px;
+}
+
+.week-tomorrow span{
+    color: #5b5b5b;
+    position: absolute;
+    top: 10px;
+    left: 200px;
+}
+
+.now-search button{
+    width: 310px;
+    height: 60px;
+    background-color: #eb666b;
+    position: absolute;
+    left: 20px;
+    top: 130px;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+}
+
+
+
+.trust{
+    width: 300px;
+    height: 20px;
+    position: absolute;
+    top: 200px;
+    left: 25px;
+
+
+}
+
+.trust img{
+    width: 14px;
+}
+
+.trust span{
+    font-size: 10px;
+    color: #7f7f7f;
+}
+.moneybag{
+    position: absolute;
+    top: -50px;
+}
+
+.music{
+    position: absolute;
+    top: -50px;
+    left: 105px;
+}
+
+.protect{
+    position: absolute;
+    top: -50px;
+    left: 206px;
+}
+
+.introduec-img img{
+    width: 105px;
+    margin-left: 40px;
+    height: 25px;
+}
+
+.introduce-text{
+    color: #7f7f7f;
+    margin-left: 40px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.introduce-imgs img{
+    margin-left: 40px;
+    margin-top: 20px;
+    height: 240px;
+    width: 335px;
+}
+
+.introduce-imgs-button{
+    width: 200px;
+    height: 50px;
+    background-color: #f8f8f8;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.sleep-title img{
+    margin-left: 40px;
+    height: 25px;
+    width: 105px;
+    margin-top: 20px;
+}
+
+.say-title img{
+    margin-left: 40px;
+    height: 38px;
+    width: 105px;
+    margin-top: 20px;
+}
+
+.say-title span{
+    color: #7f7f7f;
+    margin-left: 40px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.look-title{
+    color: #2d3544;
+    font-weight: 800;
+    margin-left: 40px;
+}
+
+.must-look{
+    font-size: 25px;
+}
+
+.looklook{
+    font-size: 25px;
+    color: #eb666b;
+    margin-left: -15px;
+}
+
+.look-text{
+    color: #7f7f7f;
+    margin-left: 40px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.swiper-text{
+    color: #575d69;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.swiper-text-area{
+    color: #575d69;
+    font-size: 13px;
+    font-weight: 800;
+    margin-top: 10px;
+}
+
+.cleanfloat::after{
+    display: block;
+    clear: both;
+    content:"";
+    visibility: hidden;
+    height: 0;
+}/*清浮动*/
+
+ul li{
+    list-style:none;
+    float:left;
+    font-size:30px;
+    margin:5px;
+    color:#fddd99;
+    cursor:pointer;
+}/*五角星样式*/
+.hs,.cs{color:#eda200;}/*五角星点击后样式*/
+
+.cleanfloat li{
+    margin: 0px;
+    font-size: 22px;
+}
+
+
+
+.RMB{
+    color: #f65e5a;
+    font-size: 10px;
+    font-weight: 900;
+    margin-top: 10px;
+    float: left;
+}
+
+.maths{
+    color: #f65e5a;
+    font-size: 16px;
+    font-weight: 900;
+    margin-top: 4px;
+    margin-left: 15px;
+    float: left;
+}
+
+.everynight{
+    float: left;
+    color: #666666;
+    font-size: 13px;
+    font-weight: 900;
+    margin-left: 15px;
+    margin-top: 6px;
+}
+
+.heart{
+    position: absolute;
+    top: -30px;
+    right: 57px;
+    width: 10px;
+    height: 10px;
+}
+/* 头部结束 */
+
+/* 底部开始 */
+.bottom-one{
+    margin: 0 auto;
+    width: 100%;
+    height: 200px;
+    color: #eb666b;
+    font-size: 12px;
+    border: 1px solid snow;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+.look{
+    background: #fafafa;
+}
+
+.house{
+
+    margin-left: 85px;
+    margin-top: 30px;
+}
+.eye{
+    margin-left: 70px;
+    margin-top: 36px;
+    opacity: 0.5;
+}
+.people{
+
+    margin-left: 305px;
+    margin-top: -42px;
+    opacity: 0.5;
+}
+
+.bottom-text{
+    margin-left: -2px;
+}
+.bottom-text1{
+    margin-left: 0px;
+}
+.bottom-text2{
+    margin-left: -3px;
+}
+/* 底部结束 */
+

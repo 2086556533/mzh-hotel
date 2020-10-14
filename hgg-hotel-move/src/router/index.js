@@ -44,11 +44,18 @@ const routes = [
         meta:{title:'民宿列表'}
     },
     {
-        //引入list组件
+        //引入个人中心组件
         path: '/my',
         name: 'My',
         component: () => import('../views/my/My'),
         meta:{title:'个人中心'}
+    },
+    {
+        //引入订单组件
+        path: '/orders',
+        name: 'Orders',
+        component: () => import('../views/orders/Orders'),
+        meta:{title:'订单'}
     },
 
 ];
